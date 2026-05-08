@@ -38,6 +38,9 @@ pip install numpy pymavlink mavproxy
 # 在上位机运行代码测试
 
 以下代码运行后跳出无人机数据则为正常🎉
+在机器上运行使用:  tcp:127.0.0.1:5777
+在别的地方运行代码使用: tcp:机器人 ip 地址:5777
+使用前要确保 机器人 ip 地址的dwios 面板可以打开, 因为是通过这个面板来转发的
 
 ```python
 """
@@ -46,7 +49,7 @@ pip install numpy pymavlink mavproxy
 import time
 from pymavlink import mavutil
 
-master = mavutil.mavlink_connection('udpin:0.0.0.0:14550')
+master = mavutil.mavlink_connection('tcp:127.0.0.1:5777')
 
 #确保连接是有效的
 master.wait_heartbeat()
@@ -66,7 +69,7 @@ Example of how to Arm and Disarm an Autopilot with pymavlink
 """
 from pymavlink import mavutil
 
-master = mavutil.mavlink_connection('udpin:0.0.0.0:14550')
+master = mavutil.mavlink_connection('tcp:127.0.0.1:5777')
 master.wait_heartbeat()
 
 # 解锁电机
@@ -104,7 +107,7 @@ import sys
 from pymavlink import mavutil
 
 # 创建连接
-master = mavutil.mavlink_connection('udpin:0.0.0.0:14550')
+master = mavutil.mavlink_connection('tcp:127.0.0.1:5777')
 # 发送命令前等待心跳
 master.wait_heartbeat()
 
@@ -154,7 +157,7 @@ while True:
 from pymavlink import mavutil
 
 # 创建连接
-master = mavutil.mavlink_connection('udpin:0.0.0.0:14550')
+master = mavutil.mavlink_connection('tcp:127.0.0.1:5777')
 # 请等待心跳后再发送命令
 master.wait_heartbeat()
 
@@ -196,7 +199,7 @@ import time
 from pymavlink import mavutil
 
 # 创建连接
-master = mavutil.mavlink_connection('udpin:0.0.0.0:14550')
+master = mavutil.mavlink_connection('tcp:127.0.0.1:5777')
 # 在发送命令之前等待一个心跳信号
 master.wait_heartbeat()
 
@@ -259,7 +262,7 @@ def set_servo_pwm(servo_n, microseconds):
     )
 
 # 创建连接
-master = mavutil.mavlink_connection('udpin:0.0.0.0:14550')
+master = mavutil.mavlink_connection('tcp:127.0.0.1:5777')
 # 请等待心跳后再发送命令
 master.wait_heartbeat()
 
@@ -330,7 +333,7 @@ def set_target_attitude(roll, pitch, yaw):
     )
 
 # 创建连接
-master = mavutil.mavlink_connection('udpin:0.0.0.0:14550')
+master = mavutil.mavlink_connection('tcp:127.0.0.1:5777')
 boot_time = time.time()
 # 在发送命令之前等待心跳信号
 master.wait_heartbeat()
@@ -381,7 +384,7 @@ from pymavlink import mavutil
 
 
 # 创建连接
-master = mavutil.mavlink_connection('udpin:0.0.0.0:14550')
+master = mavutil.mavlink_connection('tcp:127.0.0.1:5777')
 # 请等待心跳后再发送命令
 master.wait_heartbeat()
 
