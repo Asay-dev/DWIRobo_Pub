@@ -15,7 +15,7 @@ pip install numpy pymavlink mavproxy
 ## 连接(如果您有 DWIOs 联系客服使用 DWIOs 面板)
 + 使用DWIAssistant工具
 
-+ 修改IP地址为您的机器人IP默认192.168.255.233
++ 修改IP地址为您的机器人IP(在遥控软件可自动发现查看)
 
 ![alt text](img/01631bc38928f03f35fb2b013ff4b12.png)
 
@@ -39,8 +39,8 @@ pip install numpy pymavlink mavproxy
 
 以下代码运行后跳出无人机数据则为正常🎉
 
-+ 在机器上运行使用:  tcp:127.0.0.1:5777
-+ 在别的地方运行代码使用: tcp:机器人 ip 地址:5777
++ 在机器上运行使用:  udp:127.0.0.1:14550
++ 在别的地方运行代码使用: udp:机器人 ip 地址:14550
 + 使用前要确保 *机器人 ip 地址的dwios* 面板可以打开, 因为是通过这个面板来转发的
 
 ```python
@@ -50,7 +50,7 @@ pip install numpy pymavlink mavproxy
 import time
 from pymavlink import mavutil
 
-master = mavutil.mavlink_connection('tcp:127.0.0.1:5777')
+master = mavutil.mavlink_connection('udp:(机器人 IP 地址):14550')
 
 #确保连接是有效的
 master.wait_heartbeat()
@@ -70,7 +70,7 @@ Example of how to Arm and Disarm an Autopilot with pymavlink
 """
 from pymavlink import mavutil
 
-master = mavutil.mavlink_connection('tcp:127.0.0.1:5777')
+master = mavutil.mavlink_connection('udp:(机器人 IP 地址):14550')
 master.wait_heartbeat()
 
 # 解锁电机
@@ -108,7 +108,7 @@ import sys
 from pymavlink import mavutil
 
 # 创建连接
-master = mavutil.mavlink_connection('tcp:127.0.0.1:5777')
+master = mavutil.mavlink_connection('udp:(机器人 IP 地址):14550')
 # 发送命令前等待心跳
 master.wait_heartbeat()
 
@@ -158,7 +158,7 @@ while True:
 from pymavlink import mavutil
 
 # 创建连接
-master = mavutil.mavlink_connection('tcp:127.0.0.1:5777')
+master = mavutil.mavlink_connection('udp:(机器人 IP 地址):14550')
 # 请等待心跳后再发送命令
 master.wait_heartbeat()
 
@@ -200,7 +200,7 @@ import time
 from pymavlink import mavutil
 
 # 创建连接
-master = mavutil.mavlink_connection('tcp:127.0.0.1:5777')
+master = mavutil.mavlink_connection('udp:(机器人 IP 地址):14550')
 # 在发送命令之前等待一个心跳信号
 master.wait_heartbeat()
 
@@ -263,7 +263,7 @@ def set_servo_pwm(servo_n, microseconds):
     )
 
 # 创建连接
-master = mavutil.mavlink_connection('tcp:127.0.0.1:5777')
+master = mavutil.mavlink_connection('udp:(机器人 IP 地址):14550')
 # 请等待心跳后再发送命令
 master.wait_heartbeat()
 
@@ -334,7 +334,7 @@ def set_target_attitude(roll, pitch, yaw):
     )
 
 # 创建连接
-master = mavutil.mavlink_connection('tcp:127.0.0.1:5777')
+master = mavutil.mavlink_connection('udp:(机器人 IP 地址):14550')
 boot_time = time.time()
 # 在发送命令之前等待心跳信号
 master.wait_heartbeat()
@@ -385,7 +385,7 @@ from pymavlink import mavutil
 
 
 # 创建连接
-master = mavutil.mavlink_connection('tcp:127.0.0.1:5777')
+master = mavutil.mavlink_connection('udp:(机器人 IP 地址):14550')
 # 请等待心跳后再发送命令
 master.wait_heartbeat()
 
