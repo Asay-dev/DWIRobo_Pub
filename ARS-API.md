@@ -12,29 +12,6 @@
 pip install numpy pymavlink mavproxy
 ```
 
-## 连接(如果您有 DWIOs 联系客服使用 DWIOs 面板)
-+ 使用DWIAssistant工具
-
-+ 修改IP地址为您的机器人IP(在遥控软件可自动发现查看)
-
-![alt text](img/01631bc38928f03f35fb2b013ff4b12.png)
-
-+ 点击配置页， 加载配置
-
-![alt text](img/1753781974680.png)
-
-+ 修改地址为二次开发的上位机地址
-
-![alt text](img/bff74e3c81c62ccd93ecd185366d3d2.png)
-
-+ 保存配置
-
-![alt text](img/72e14933fd7de400c267be1b09dd743.png)
-
-+ 重启机器人或者服务（以下演示重启服务）
-
-![alt text](img/68613ded66c157217f995a8096204d5.png)
-
 # 在上位机运行代码测试
 
 以下代码运行后跳出无人机数据则为正常🎉
