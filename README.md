@@ -15,7 +15,7 @@ https://www.dwirobo.tech/app/
 
 # !! [API接口文档/源代码](ARS-API.md)
 # !! [视频流获取分流](视频流/视频流获取教程.md)
-# !! [中文 ARDUSUB 技术文档]（https://docs.dwirobo.tech/index.html）
+# !! [中文ARDUSUB技术文档]（https://docs.dwirobo.tech/index.html）
 
 [(停用, 仅作参考, 用户请尽快联系客服升级)DWIHub版开机配置(适合有DWIHub的用户)](DWIHub版开机配置.md)
 
